@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Pontano+Sans&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+body {
+  background-color: #77407A;
+  font-family: "Pontano Sans", "sans-serif";
+}
+body .btn {
+  background-color: #536662;
+  box-shadow: 2px 4px 0 #FAA7DA;
+  color: #fff;
+  transition: all 0.01s linear;
+}
+body .btn:active {
+  box-shadow: 1px 2px 0 #fdc7e8;
+  transform: translateY(3px);
+}
+
+header .bi {
+  color: #FAA7DA;
+}
+header .bi-cart3 {
+  color: #536662;
+}
+header nav {
+  margin-top: 1rem;
+}
+
+h1 {
+  font-family: "Charm", "serif";
+  color: #40C7AA;
+  text-shadow: 1px 1px 1px #fff;
+  text-decoration: underline;
+}
+
+h2 {
+  color: #68FA88;
+  font-family: "Charm", "serif";
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.jumbotron {
+  background: #fdc7e8;
+  color: #77407A;
+}
+.jumbotron h1 {
+  color: #fff;
+  text-shadow: 2px 4px 0 #536662;
+  text-decoration: none;
+}
+.jumbotron p {
+  color: #77407A;
+}
+
+/* Responsive images */
+img {
+  height: auto;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+p {
+  color: #fff;
+}
+
+.marketing img {
+  border: 0.25rem solid #fff;
+  margin: 1rem 0;
+}
+.marketing .featurette {
+  background-color: #536662;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 10px #fff;
+}
+
+.thumbnail p {
+  color: #40C7AA;
+  font-weight: bold;
+}
+
+.panel .panel-heading {
+  color: #77407A;
+}
+
+figure {
+  margin: 3rem 0;
+}
+figure img {
+  box-shadow: 3px 3px 10px #fff;
+}
+
+.contact {
+  color: #fff;
+  border: 0.25rem solid #fff;
+}
+
+footer a {
+  color: #fff;
+}/*# sourceMappingURL=custom.css.map */

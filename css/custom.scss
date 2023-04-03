@@ -1,0 +1,170 @@
+//tested in Chrome, Firefox & Edge, iPhone SE, iPhone 12 Pro & iPad air
+//browsers all display similarly (modern versions), but the site is responsive 
+//and shifts to display ideally in different browsers
+//use @ import to include Google fonts (Pontano Sans & Charm)
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Pontano+Sans&display=swap');
+//Bootstrap icons
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+//Sass map (associative array) to hold the color theme for the site
+$themecolors: (
+    purple: #77407A,
+    pink: #FAA7DA,
+    light-pink: #fdc7e8, 
+    green: #68FA88,
+    turquoise: #40C7AA,
+    grey: #536662,
+    white: #fff
+);
+
+//function to get and return any color kay value from the color theme map
+@function getcolor($color) {
+    @return map-get($themecolors, $color);
+}
+
+//variables to hold common style values
+$font-main: 'Pontano Sans', 'sans-serif';
+$font-styled: 'Charm', 'serif';
+$font-size-main: 1.5rem;
+$font-size-bigger: 2rem;
+$font-size-big: 3rem;
+$border-rd: 1rem;
+$btn-shadow: 2px 4px 0 getcolor(pink);
+$h1-shadow: 2px 4px 0 getcolor(grey);
+$h2-shadow: 1px 1px 1px getcolor(white);
+$img-border: .25rem solid getcolor(white);
+$white-shadow: 3px 3px 10px getcolor(white);
+
+//applied styles, using nesting, calling function/map and variables where appropriate
+//body
+body {
+    background-color: getcolor(purple);
+    font-family: $font-main;
+
+    .btn {
+        background-color: getcolor(grey);
+        box-shadow: $btn-shadow;
+        color: getcolor(white);
+        transition: all .01s linear;
+      }
+      
+      .btn:active {
+        box-shadow: 1px 2px 0 getcolor(light-pink);
+        transform: translateY(3px);
+      }
+}
+// <header> 
+header {
+    //icon styles
+    .bi {
+        color: getcolor(pink);
+    }
+
+    .bi-cart3 {
+        color: getcolor(grey);
+    }
+
+    nav {
+        margin-top: 1rem;
+    }
+}
+
+//h1 styles
+h1 {
+    font-family: $font-styled;
+    color: getcolor(turquoise);
+    text-shadow: $h2-shadow;
+    text-decoration: underline;
+}
+
+//h2 styles
+h2 {
+    color: getcolor(green);
+    font-family: $font-styled;
+    text-shadow: $h2-shadow;
+}
+
+//then jumbotron
+.jumbotron{
+
+    background: getcolor(light-pink);
+    color: getcolor(purple);
+
+    //h1 inside jumbotron
+    h1 {
+        color: getcolor(white);
+        text-shadow: $h1-shadow;
+        text-decoration: none;
+    }
+
+    p {
+        color: getcolor(purple);
+    }
+}
+
+/* Responsive images */
+img {
+    height: auto;
+    width: 100%;
+    border-radius: $border-rd;
+}
+
+//paragraph text
+p {
+    color: getcolor(white);
+}
+
+//marketing/feature styles
+.marketing {
+
+    img {
+        border: $img-border;
+        margin: 1rem 0;
+    }
+
+    .featurette {
+        background-color: getcolor(grey);
+        border-radius: $border-rd;
+        box-shadow: $white-shadow;
+    }
+}
+
+//thumbnail styles
+.thumbnail {
+
+    p {
+        color: getcolor(turquoise);
+        font-weight: bold;
+    }
+}
+
+//panel styles
+.panel {
+
+    .panel-heading {
+        color: getcolor(purple);
+    }
+}
+
+//figure styles
+figure {
+    margin: 3rem 0;
+
+    img {
+        box-shadow: $white-shadow;
+    }
+}
+
+//contact form styles
+.contact {
+    color: getcolor(white);
+    border: $img-border;
+   
+}
+
+//footer
+footer {
+
+    a {
+        color: getcolor(white);
+    }
+}

@@ -1,2 +1,2 @@
-# once-and-floral-bootstrap
+# once-and-floral
 This project uses Bootstrap framework to build a modern interface for a flower shop. It uses semantic HTML & SCSS to streamline styles.

@@ -1,19 +1,20 @@
-//tested in Chrome, Firefox & Edge, iPhone SE, iPhone 12 Pro & iPad air
-//browsers all display similarly (modern versions), but the site is responsive 
-//and shifts to display ideally in different browsers
 //use @ import to include Google fonts (Pontano Sans & Charm)
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Pontano+Sans&display=swap');
 //Bootstrap icons
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 //Sass map (associative array) to hold the color theme for the site
 $themecolors: (
-    purple: #77407A,
-    pink: #FAA7DA,
-    light-pink: #fdc7e8, 
-    green: #68FA88,
-    turquoise: #40C7AA,
-    grey: #536662,
-    white: #fff
+    purple: #f5f5f7, // very light lavender
+    pink: #e0bcd4,   // muted rose
+    light-pink: #f8e8f0, 
+    green: #294735,  // dark mint (text/borders/secondary)
+    turquoise: #a0d6d1, // pale aqua
+    grey: #e9e8e8,      // neutral grey
+    white: #ffffff,
+    soft-blue: #e6f0fa,
+    dark-text: #333,
+    hover-blue: #d0e7f8,
+    active-blue: #b8d9f0,
 );
 
 //function to get and return any color kay value from the color theme map
@@ -23,7 +24,7 @@ $themecolors: (
 
 //variables to hold common style values
 $font-main: 'Pontano Sans', 'sans-serif';
-$font-styled: 'Charm', 'serif';
+$font-heading: 'Segoe UI', 'Helvetica Neue', 'Ubuntu', sans-serif;
 $font-size-main: 1.5rem;
 $font-size-bigger: 2rem;
 $font-size-big: 3rem;
@@ -31,27 +32,36 @@ $border-rd: 1rem;
 $btn-shadow: 2px 4px 0 getcolor(pink);
 $h1-shadow: 2px 4px 0 getcolor(grey);
 $h2-shadow: 1px 1px 1px getcolor(white);
-$img-border: .25rem solid getcolor(white);
+$img-border: .15rem solid getcolor(active-blue);
 $white-shadow: 3px 3px 10px getcolor(white);
 
 //applied styles, using nesting, calling function/map and variables where appropriate
 //body
-body {
-    background-color: getcolor(purple);
-    font-family: $font-main;
 
+body {
     .btn {
-        background-color: getcolor(grey);
-        box-shadow: $btn-shadow;
-        color: getcolor(white);
-        transition: all .01s linear;
-      }
-      
-      .btn:active {
-        box-shadow: 1px 2px 0 getcolor(light-pink);
-        transform: translateY(3px);
-      }
+        background-color: getcolor(soft-blue);
+        color: getcolor(dark-text);
+        border: 1px solid getcolor(dark-text);
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            background-color: getcolor(hover-blue);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        &:active {
+            background-color: getcolor(active-blue);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    }
 }
+
 // <header> 
 header {
     //icon styles
@@ -70,16 +80,20 @@ header {
 
 //h1 styles
 h1 {
-    font-family: $font-styled;
-    color: getcolor(turquoise);
-    text-shadow: $h2-shadow;
-    text-decoration: underline;
+  font-family: $font-heading;
+  color: getcolor(dark-text); // make sure this is defined in your map, e.g. #222
+  font-size: $font-size-big;
+  font-weight: 700;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); // subtle shadow
+  margin-bottom: 1rem;
 }
+
 
 //h2 styles
 h2 {
     color: getcolor(green);
-    font-family: $font-styled;
+    font-family: $font-heading;
+    font-size: 1.75rem;
     text-shadow: $h2-shadow;
 }
 
@@ -87,17 +101,12 @@ h2 {
 .jumbotron{
 
     background: getcolor(light-pink);
-    color: getcolor(purple);
+    //color: getcolor(purple);
 
     //h1 inside jumbotron
     h1 {
-        color: getcolor(white);
         text-shadow: $h1-shadow;
         text-decoration: none;
-    }
-
-    p {
-        color: getcolor(purple);
     }
 }
 
@@ -110,7 +119,7 @@ img {
 
 //paragraph text
 p {
-    color: getcolor(white);
+    color: getcolor(dark-text);
 }
 
 //marketing/feature styles
@@ -119,12 +128,18 @@ p {
     img {
         border: $img-border;
         margin: 1rem 0;
+        max-width: 500px;
+        max-height: 500px;
     }
 
     .featurette {
         background-color: getcolor(grey);
         border-radius: $border-rd;
         box-shadow: $white-shadow;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 100%; // prevent it from exceeding its container
     }
 }
 

@@ -1,54 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Pontano+Sans&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
-body {
-  background-color: #77407A;
-  font-family: "Pontano Sans", "sans-serif";
-}
 body .btn {
-  background-color: #536662;
-  box-shadow: 2px 4px 0 #FAA7DA;
-  color: #fff;
-  transition: all 0.01s linear;
+  background-color: #e6f0fa;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+body .btn:hover {
+  background-color: #d0e7f8;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 body .btn:active {
-  box-shadow: 1px 2px 0 #fdc7e8;
-  transform: translateY(3px);
+  background-color: #b8d9f0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 header .bi {
-  color: #FAA7DA;
+  color: #e0bcd4;
 }
 header .bi-cart3 {
-  color: #536662;
+  color: #e9e8e8;
 }
 header nav {
   margin-top: 1rem;
 }
 
 h1 {
-  font-family: "Charm", "serif";
-  color: #40C7AA;
-  text-shadow: 1px 1px 1px #fff;
-  text-decoration: underline;
+  font-family: "Segoe UI", "Helvetica Neue", "Ubuntu", sans-serif;
+  color: #333;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
 }
 
 h2 {
-  color: #68FA88;
-  font-family: "Charm", "serif";
-  text-shadow: 1px 1px 1px #fff;
+  color: #294735;
+  font-family: "Segoe UI", "Helvetica Neue", "Ubuntu", sans-serif;
+  font-size: 1.75rem;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .jumbotron {
-  background: #fdc7e8;
-  color: #77407A;
+  background: #f8e8f0;
 }
 .jumbotron h1 {
-  color: #fff;
-  text-shadow: 2px 4px 0 #536662;
+  text-shadow: 2px 4px 0 #e9e8e8;
   text-decoration: none;
-}
-.jumbotron p {
-  color: #77407A;
 }
 
 /* Responsive images */
@@ -59,40 +62,46 @@ img {
 }
 
 p {
-  color: #fff;
+  color: #333;
 }
 
 .marketing img {
-  border: 0.25rem solid #fff;
+  border: 0.15rem solid #b8d9f0;
   margin: 1rem 0;
+  max-width: 500px;
+  max-height: 500px;
 }
 .marketing .featurette {
-  background-color: #536662;
+  background-color: #e9e8e8;
   border-radius: 1rem;
-  box-shadow: 3px 3px 10px #fff;
+  box-shadow: 3px 3px 10px #ffffff;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .thumbnail p {
-  color: #40C7AA;
+  color: #a0d6d1;
   font-weight: bold;
 }
 
 .panel .panel-heading {
-  color: #77407A;
+  color: #f5f5f7;
 }
 
 figure {
   margin: 3rem 0;
 }
 figure img {
-  box-shadow: 3px 3px 10px #fff;
+  box-shadow: 3px 3px 10px #ffffff;
 }
 
 .contact {
-  color: #fff;
-  border: 0.25rem solid #fff;
+  color: #ffffff;
+  border: 0.15rem solid #b8d9f0;
 }
 
 footer a {
-  color: #fff;
+  color: #ffffff;
 }/*# sourceMappingURL=custom.css.map */

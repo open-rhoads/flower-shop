@@ -7,8 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Once and Floral - Products</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,173 +21,62 @@
 <body>
     <div class="container" id="top">
         <header class="row">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> Once and Floral</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown active">
-                        <a href="products.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="products.html#flowers">Flowers</a></li>
-                            <li><a href="products.html#succulents">Succulents & Cacti</a></li>
-                            <li><a href="products.html#tools">Trees and Bushes</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                    <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
+        <nav class="navbar navbar-expand-lg bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower2"></i> Once and Floral</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+              aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="products.html" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Products
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="products.html#flowers">Flowers</a></li>
+                    <li><a class="dropdown-item" href="products.html#succulents">Succulents & Cacti</a></li>
+                    <li><a class="dropdown-item" href="products.html#tools">Trees and Bushes</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+              </ul>
+
+              <form class="d-flex" role="search">
+                <i class="bi bi-cart3 me-2"></i>
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </nav>
         </header>
-        <main>
+        <main class="container">
             <h1>Our Products</h1>
-            <section class="row" id="flowers">
-                <h2>Flowers & Bushes</h2>
-                <hr class="featurette-divider">
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/daisy.jpg" alt="a single pink daisy" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Daisies</h3>
-                            <p>Colorful & Bright</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/bird-paradise.jpg" alt="bird of paradise" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Bird of Paradise</h3>
-                            <p>Exotic & Fun</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/lily.jpg" alt="pink lilies" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Lilies</h3>
-                            <p>A springtime must</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/hibiscus.jpg" alt="red hibiscus bush" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Hibiscus</h3>
-                            <p>Various colors</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/poppies.jpg" alt="poppies" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Poppies</h3>
-                            <p>California gold</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a>></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/sunflowers.jpg" alt="sunflowers" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Sunflowers</h3>
-                            <p>A harvest essential</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-            </section> <!-- end of row -->
-            <section class="row" id="succulents">
-                <h2>Succulents &  Cacti</h2>
-                <hr class="featurette-divider">
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/cacti.jpg" alt="Cacti" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Cacti Varieties</h3>
-                            <p>Prickly, but easy</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/corwn-thorns.jpg" alt="Crown of Thorns succulent" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Crown of Thorns</h3>
-                            <p>A lush essential</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/jade-plant.jpg" alt="Jade plant" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Jade Plant</h3>
-                            <p>A succulent classic</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/zebra-haworthia.jpg" alt="zebra haworthia" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Zebra Haworthia</h3>
-                            <p>Funky & fun</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/agave.jpg" alt="agave plant" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Agave</h3>
-                            <p>More than margaritas</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img src="images/burro-tail.jpg" alt="Burro Tail succulent" width="377" height="251" class="img-fluid">
-                        <div class="caption">
-                            <h3>Burro Tail</h3>
-                            <p>A delightful filler</p>
-                            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-            </section> <!-- end of row -->
-            <section class="row" id="tools">
+            <!-- Category Selector -->
+            <div id="category-selector">
+                <button data-category="Flowers">Flowers & Bushes</button>
+                <button data-category="Succulents">Succulents & Cacti</button>
+                <button data-category="Tools">Gardening Tools</button>
+            </div>
+            <section class="row" id="product-list">
+            <!-- Products will be injected here -->
+            </section>
+
+            <!-- Product List -->
+            <section id="product-list" class="row mt-4">
+                <!-- Products will be injected here -->
+            </section>
+
+             <!-- <section class="row" id="tools">
                 <h2>Gardening Tools</h2>
                 <hr class="featurette-divider">
                 <div class="col-sm-6 col-md-4">
@@ -196,9 +86,9 @@
                             <h3>Axes</h3>
                             <p>Create your space</p>
                             <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
+                        </div> 
+                    </div> 
+                </div> 
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <img src="images/mower.jpg" alt="lawn mower" width="377" height="251" class="img-fluid">
@@ -206,19 +96,18 @@
                             <h3>Lawn Mowers</h3>
                             <p>For lawns of all sizes</p>
                             <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-                <div class="col-sm-6 col-md-4">
+                        </div> 
+                    </div> 
+                </div>
                     <div class="thumbnail">
                         <img src="images/pots.jpg" alt="gardening pots" width="377" height="251" class="img-fluid">
                         <div class="caption">
                             <h3>Planting Pots</h3>
                             <p>From essentials to elegance</p>
                             <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
+                        </div> 
+                    </div> 
+                </div> 
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <img src="images/rake-hoe.jpg" alt="Rake and pitchfork" width="377" height="251" class="img-fluid">
@@ -226,9 +115,9 @@
                             <h3>Rakes and Pitchforks</h3>
                             <p>Gardening Fundamentals</p>
                             <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
+                        </div> 
+                    </div> 
+                </div> 
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <img src="images/shovel.jpg" alt="shovel" width="377" height="251" class="img-fluid">
@@ -236,9 +125,9 @@
                             <h3>Shovels</h3>
                             <p>Your best friend in the garden</p>
                             <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
+                        </div> 
+                    </div> 
+                </div> 
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <img src="images/wheelbarrels.jpg" alt="wheelbarrow" width="377" height="251" class="img-fluid">
@@ -246,10 +135,11 @@
                             <h3>Wheelbarrows</h3>
                             <p>Don't work too hard</p>
                             <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
-                        </div> <!-- end caption -->
-                    </div> <!-- end thumbnail -->
-                </div> <!-- end column 1 of 3 / 1 of 2 depending on screen size -->
-            </section> <!-- end of row -->
+                        </div> 
+                    </div> 
+                </div> 
+            </section> end of row -->
+
         </main>
         <hr class="featurette-divider">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -270,5 +160,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./scripts/products.js"></script>
 </body>
 </html>

@@ -5,7 +5,10 @@ This project uses the Bootstrap CSS framework for a flower shop eCommerce websit
 One of my greatest flaws as an early web developer was loving color a bit too much. This site previously had a lively and arguably distarcting bright pink and purple theme that I have scaled back significantly. This was a great way to review SCSS. A lot of the other styling too needed to be modernized.
 
 ## Dynamic Content
-This project also suffers from bloated HTML. It has a products page in particular that could be re-factored to be much more dynamic. I will start by trying to code the functionality using an object of products. 
+This project also suffers from bloated HTML. It has a Products page in particular that was begging me to re-factor it to be dynamic. I started by using a simple JSON object for product data and using it to display the Products list page and a product detail page dynamically based on the selected category or individual product. The list page includes a default category.
+
+## Adding Functional Search
+Another great enhancement for this project would be a functional search. I will add this once the database is set up.
 
 ## Adding a Functional Cart Back End
-My last enhancement to this will be to actually hook it up to a database of products and make it function by implementing Express.js with SQLLite database.
+Possibly the best enhancement I am working on with this one is to actually hook it up to a database of products and make it function by implementing Express.js with SQLLite database. I am teaching myself how to use these technologies for the first time. 

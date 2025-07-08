@@ -27,7 +27,32 @@ app.listen(PORT, () => {
 // how to start and stop this
 // navigate to the backend folder in terminal
 // to start: node server.js
-// OR npx nodemon server.js... what is this... recommended???
-// install with: npm install -g nodemon... idk if I can do that 
-// ohhh does it just simplify the command.... try it next
 // to stop: Ctrl + C
+
+// Route to get all products
+app.get('/products', (req, res) => {
+  // Query all products from the database
+  db.all('SELECT * FROM products', [], (err, rows) => {
+    if (err) {
+      // If there's an error, send a 500 response
+      return res.status(500).json({ error: err.message });
+    }
+    // Send the list of products as JSON
+    res.json(rows);
+  });
+});
+
+// Route to add an item to the cart
+app.post('/cart', (req, res) => {
+  const { product_id, quantity } = req.body; // Extract product ID and quantity from request body
+
+  // Insert the item into the cart table
+  db.run('INSERT INTO cart (product_id, quantity) VALUES (?, ?)', [product_id, quantity], function(err) {
+    if (err) {
+      // If there's an error, send a 500 response
+      return res.status(500).json({ error: err.message });
+    }
+    // Send back the ID of the newly inserted cart item
+    res.json({ id: this.lastID });
+  });
+});

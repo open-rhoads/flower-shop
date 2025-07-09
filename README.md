@@ -12,5 +12,11 @@ Possibly the best enhancement I am working on with this one is to actually hook 
 
 First, I've used the command line to setup the environment dependencies in a directory. Then, I created the main server file to import required modules/ middleware, then start the app and middleware. This also creates the SQLite database file. Finally, it starts the server port.
 
+From there, I added more files to connect to the database and create and populate 3 starter tables. I learned how to troubleshoot the tables with the command line using sqlite3. 
+
+With the basic database in place, I set up some basic routes in another file to serve as API endpoints that will work with the database records. 
+
+Nezt is to add more functionality. 
+
 ## Adding Functional Search
 Another great enhancement for this project would be a functional search. I will add this once the database is set up.

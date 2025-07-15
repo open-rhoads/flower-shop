@@ -12,13 +12,18 @@ const db = new sqlite3.Database('./flower_shop.db', (err) => {
 // Create tables
 db.serialize(() => {
   // Create products table
-  db.run(`CREATE TABLE IF NOT EXISTS products (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    description TEXT,
-    price REAL,
-    image TEXT
-  )`);
+  db.run(`
+    CREATE TABLE IF NOT EXISTS products (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      category TEXT,
+      name TEXT,
+      img TEXT,
+      alt TEXT,
+      description TEXT,
+      longDescription TEXT,
+      price REAL
+    )`
+  );
 
   // Create cart table
   db.run(`CREATE TABLE IF NOT EXISTS cart (

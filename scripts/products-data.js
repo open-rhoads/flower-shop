@@ -181,3 +181,5 @@ const products = [
     price: 59.99
   }
 ];
+
+module.exports = { products };

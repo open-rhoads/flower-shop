@@ -21,5 +21,9 @@ Finally, I modified both the products.js and product-detail.js files to pull the
 ## Adding the Cart Functionality
 Now that the products are being loaded from a database dynamically, I am working on implementing the cart, checkout, and confirmation pages and functionality. 
 
+First, I needed to add more route endpoints to the server file so I could fetch get and post requests from the database/cart. Then, I added a minimal Cart HTML page and a cart.js file to dynamically populate the cart with products; once they exist. 
+
+There is a little debugging to do. Next, I will add a View Cart button, put the Add to Cart buttons on the Product list page too, and add the Checkout functionality. 
+
 ## Adding a Working Search
-Another great enhancement for this project would be a functional search. I will add this once the database is set up.
+Another great enhancement for this project would be a functional search. I will add this once the database and cart checkout are set up.

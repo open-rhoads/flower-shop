@@ -56,3 +56,41 @@ app.post('/cart', (req, res) => {
     res.json({ id: this.lastID });
   });
 });
+
+// Route to get all items in the cart
+app.get('/cart', (req, res) => {
+  // SQL query to join cart and products tables
+  const query = `
+    SELECT cart.id, cart.quantity, products.name, products.price
+    FROM cart
+    JOIN products ON cart.product_id = products.id
+  `;
+  // Execute the query
+  db.all(query, [], (err, rows) => {
+    if (err) {
+      // If there's an error, send a 500 response with the error message
+      return res.status(500).json({ error: err.message });
+    }
+    // If successful, send the resulting rows (cart items with product info) as JSON
+    res.json(rows);
+  });
+});
+
+// Route to delete an item from the cart by its cart ID
+app.delete('/cart/:id', (req, res) => { // does this id need to be a variable...
+  const cartItemId = req.params.id; // Get the cart item ID from the URL
+
+  // SQL query to delete the item from the cart table
+  const query = 'DELETE FROM cart WHERE id = ?';
+
+  // Execute the query with the cart item ID
+  db.run(query, [cartItemId], function(err) {
+    if (err) {
+      // If there's an error, send a 500 response with the error message
+      return res.status(500).json({ error: err.message });
+    }
+
+    // If successful, send a confirmation message
+    res.json({ message: 'Item removed from cart', deletedId: cartItemId });
+  });
+});

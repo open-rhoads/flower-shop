@@ -1,11 +1,26 @@
 // store needed DOM Elements - the product-list section and all buttons in the category selector
 const productList = document.getElementById("product-list");
 const categoryButtons = document.querySelectorAll("#category-selector button");
+let allProducts = []; // new variable to store fetched products
+
+//fetch the products from the backend
+// THIS NEEDS TO BE CHANGED LATER AFTER HOSTING
+fetch('http://localhost:3000/products') // put new URL here
+  .then(response => response.json()) // parse it into JSON
+  .then(data => {
+    allProducts = data; // set that JSON data equal to the allProducts variable
+    renderProducts("Flowers"); // pass Default category
+  })
+  .catch(error => { // error handling
+    console.error("Error fetching products:", error);
+    productList.innerHTML = "<p>Failed to load products.</p>";
+  });
+
 
 // Render products
 function renderProducts(category) { // accepts a category param
   // filter and store products whose category matches the one passed
-  const filtered = products.filter(p => p.category === category);  
+  const filtered = allProducts.filter(p => p.category === category);
   productList.innerHTML = ""; // clear the innerHTML of the product list (from any previously displayed elements)
   // if the length of the products in the filtered variable is 0, display message
   if (filtered.length === 0) {
@@ -29,7 +44,7 @@ function renderProducts(category) { // accepts a category param
   });
 }
 
-// Event listeners
+// Category button Event listeners
 categoryButtons.forEach(button => {
   button.addEventListener("click", () => {
     const category = button.getAttribute("data-category");
@@ -45,7 +60,7 @@ categoryButtons.forEach(button => {
 });
 
 // render products with default category
-if (document.getElementById("product-list")) {
-  renderProducts("Flowers");
-}
+// if (document.getElementById("product-list")) {
+//   renderProducts("Flowers");
+// }
 

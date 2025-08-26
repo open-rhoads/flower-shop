@@ -12,12 +12,12 @@ fetch('http://localhost:3000/cart')
 
     cartItems.forEach(item => {
       const card = document.createElement('div');
-      card.className = 'cart-item card';
+      card.className = 'cart-item card p-5 col-3 m-3';
       card.innerHTML = `
-        <p><strong>${item.name}</strong></p>
-        <p>Quantity: ${item.quantity}</p>
-        <p>Price: $${item.price.toFixed(2)}</p>
-        <button class="remove-btn" data-id="${item.id}">Remove</button>
+            <h3>${item.name}</h3>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Price: $${item.price.toFixed(2)}</p>
+            <button class="remove-btn" data-id="${item.id}">Remove</button>
       `;
       container.appendChild(card);
       total += item.price * item.quantity;

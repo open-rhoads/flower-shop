@@ -21,7 +21,7 @@
   </head>
 <body>
   <div class="container" id="top">
-        <header class="row">
+    <header class="row">
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><i class="bi bi-flower2"></i> Once and Floral</a>
@@ -61,12 +61,14 @@
     </header>
 
     <h1>Your Cart</h1>
-    <div id="cart-items"></div>
-    <h2 id="cart-total">Total: $0.00</h2>
-    <button id="checkout-btn">Checkout</button>
+    <div id="cart-items" class="row d-flex justify-content-stretch">
+      
+    </div>
+    <!-- <div class="row"> -->
+      <h2 id="cart-total">Total: $0.00</h2>
+      <button id="checkout-btn">Checkout</button>
+    <!-- </div> -->
   </div>
-  <script src="./scripts/products-data.js"></script>
-  <script src="./scripts/product-detail.js"></script>
   <script src="./scripts/cart.js"></script>
 </body>
 </html>

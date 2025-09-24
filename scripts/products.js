@@ -36,10 +36,17 @@ function renderProducts(category) { // accepts a category param
         <div class="caption">
           <h3>${product.name}</h3>
           <p>${product.description}</p>
-          <p><a href="product-detail.html?id=${product.id}" class="btn btn-primary" role="button">View Details</a></p>
-        </div>
+          <p class="d-flex justify-content-end prod-buttons">
+            <a href="product-detail.html?id=${product.id}" class=" btn btn-primary" role="button">View Details</a>
+            <!-- <button class="ml-3 btn btn-primary add-to-cart-btn" data-id="${product.id}">Add to Cart</button> -->
+          </p>
+          
+          </div>
       </div>
     `;
+    const cartControls = createCartControls(product.id);
+    card.appendChild(cartControls);
+
     productList.appendChild(card); // append the card to the product list
   });
 }

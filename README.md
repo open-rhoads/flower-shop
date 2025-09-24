@@ -23,7 +23,9 @@ Now that the products are being loaded from a database dynamically, I am working
 
 First, I needed to add more route endpoints to the server file so I could fetch get and post requests from the database/cart. Then, I added a minimal Cart HTML page and a cart.js file to dynamically populate the cart with products; once they exist. 
 
-Next, I need to add a View Cart button that will display the total number of items and buttons to Add to Cart on the Products page, and put the Add to Cart buttons on the Product list page too. I would also like to enhance the cart to be able to work with a quantity value. Then, I'll add the Checkout functionality.
+Next, I need to add a View Cart button that will display the total number of items. The cart also needs better interface elements like the ability to select multiple items.
+
+I have modularized the cart controls and Add to Cart function to add it to both the Products and Product Detail pages. The styling of the buttons needs a little help next. I have also started to enhance the cart to be able to work with a quantity value. Then, I'll add the Checkout functionality.
 
 ## Adding a Working Search
 Another great enhancement for this project would be a functional search. I will add this once the database and cart checkout are set up.

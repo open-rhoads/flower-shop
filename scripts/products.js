@@ -36,16 +36,15 @@ function renderProducts(category) { // accepts a category param
         <div class="caption">
           <h3>${product.name}</h3>
           <p>${product.description}</p>
-          <p class="d-flex justify-content-end prod-buttons">
+          <div class="d-flex input-group w-auto ms-2 button-row" id="button-row-${product.id}">
             <a href="product-detail.html?id=${product.id}" class=" btn btn-primary" role="button">View Details</a>
-            <!-- <button class="ml-3 btn btn-primary add-to-cart-btn" data-id="${product.id}">Add to Cart</button> -->
-          </p>
-          
           </div>
+        </div>
       </div>
     `;
+    const buttonRow = card.querySelector(`#button-row-${product.id}`);
     const cartControls = createCartControls(product.id);
-    card.appendChild(cartControls);
+    buttonRow.appendChild(cartControls);
 
     productList.appendChild(card); // append the card to the product list
   });

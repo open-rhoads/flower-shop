@@ -1,16 +1,16 @@
 function createCartControls(productId) {
   const wrapper = document.createElement("div");
-  wrapper.className = "cart-controls d-flex align-items-center ms-2";
+  wrapper.className = "cart-controls d-flex align-items-center mt-2";
 
   const quantityInput = document.createElement("input");
   quantityInput.type = "number";
   quantityInput.min = "1";
   quantityInput.value = "1";
-  quantityInput.className = "form-control form-control-sm w-auto mx-2";
+  quantityInput.className = "form-control form-control-sm w-50 mx-2";
 
   const addToCartBtn = document.createElement("button");
   addToCartBtn.textContent = "Add to Cart";
-  addToCartBtn.className = "btn btn-outline-secondary btn-sm";
+  addToCartBtn.className = "btn btn-outline-secondary add-to-cart w-50";
 
   addToCartBtn.addEventListener("click", () => {
     const quantity = parseInt(quantityInput.value);

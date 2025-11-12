@@ -36,8 +36,8 @@ function renderProducts(category) { // accepts a category param
         <div class="caption">
           <h3>${product.name}</h3>
           <p>${product.description}</p>
-          <div class="d-flex input-group w-auto ms-2 button-row" id="button-row-${product.id}">
-            <a href="product-detail.html?id=${product.id}" class=" btn btn-primary" role="button">View Details</a>
+          <div class="d-flex input-group w-auto button-row" id="button-row-${product.id}">
+            <a href="product-detail.html?id=${product.id}" id="details-btn" class="btn btn-primary ms-2" role="button">View Details</a>
           </div>
         </div>
       </div>

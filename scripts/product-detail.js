@@ -9,7 +9,7 @@ const productId = parseInt(params.get("id"));
 const container = document.getElementById("product-detail");
 
 // Fetch product data from backend
-fetch(`http://localhost:3000/products`)
+fetch(`${API_BASE}/products`)
 .then(response => response.json())
 .then(products => {
   const product = products.find(p => p.id === productId);

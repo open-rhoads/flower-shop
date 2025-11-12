@@ -24,13 +24,14 @@ function createCartControls(productId) {
 }
 
 function addToCart(productId, quantity = 1) {
-  fetch("http://localhost:3000/cart", {
+  fetch(`${API_BASE}/cart`, { 
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ product_id: productId, quantity })
   })
   .then(res => res.json())
   .then(data => {
+    updateCartCount();
     alert("Product added to cart!");
   })
   .catch(err => {
@@ -38,3 +39,22 @@ function addToCart(productId, quantity = 1) {
     alert("Failed to add product to cart.");
   });
 }
+
+function updateCartCount() {
+  fetch(`${API_BASE}/cart`) 
+    .then(response => response.json())
+    .then(cartItems => {
+        // Calculate total quantity - reduce expects callback and initial value
+        const count = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        const badge = document.getElementById("cart-count");
+        if (badge) {
+            badge.textContent = count;
+            badge.style.display = count > 0 ? "inline-block" : "none";
+        }
+    })
+    .catch(error => console.error("Error updating cart count:", error));
+}
+
+// Run on page load
+document.addEventListener("DOMContentLoaded", updateCartCount);
+

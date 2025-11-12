@@ -1,0 +1,1 @@
+const API_BASE = "http://localhost:3000"; // Change to your hosted URL later

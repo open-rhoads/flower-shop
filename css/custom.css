@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Pontano+Sans&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
-body .btn {
+.btn {
   background-color: #e6f0fa;
   color: #333;
   border: 1px solid #333;
@@ -11,11 +11,11 @@ body .btn {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
-body .btn:hover {
+.btn:hover {
   background-color: #d0e7f8;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
-body .btn:active {
+.btn:active {
   background-color: #b8d9f0;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -30,20 +30,23 @@ header nav {
   margin-top: 1rem;
 }
 
-h1 {
+
+h1, h2 {
   font-family: "Segoe UI", "Helvetica Neue", "Ubuntu", sans-serif;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+
+h1 {
   color: #333;
   font-size: 3rem;
   font-weight: 700;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   margin-bottom: 1rem;
 }
 
 h2 {
   color: #294735;
-  font-family: "Segoe UI", "Helvetica Neue", "Ubuntu", sans-serif;
   font-size: 1.75rem;
-  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .jumbotron {
@@ -100,6 +103,7 @@ figure img {
 .contact {
   color: #ffffff;
   border: 0.15rem solid #b8d9f0;
+  border-radius: 1rem;
 }
 
 footer a {
@@ -107,7 +111,7 @@ footer a {
 }/*# sourceMappingURL=custom.css.map */
 
 #details-btn {
-  border-radius: 0.5rem;;
+  border-radius: 0.5rem;
 }
 
 .cart-controls {

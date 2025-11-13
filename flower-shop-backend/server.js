@@ -29,6 +29,10 @@ app.listen(PORT, () => {
 // to start: node server.js
 // to stop: Ctrl + C
 
+// should this be moved...
+import multer from "multer";
+const upload = multer({ dest: "uploads/" }); // Files saved in /uploads
+
 // Route to get all products
 app.get('/products', (req, res) => {
   // Query all products from the database
@@ -93,4 +97,14 @@ app.delete('/cart/:id', (req, res) => { // does this id need to be a variable...
     // If successful, send a confirmation message
     res.json({ message: 'Item removed from cart', deletedId: cartItemId });
   });
+});
+
+// Route to process form submissions
+app.post("/contact", upload.single("attachment"), (req, res) => {
+  const { name, message, email, phone, subscribe } = req.body;
+  const file = req.file; // Uploaded file info
+
+  console.log("Contact form submitted:", { name, message, email, phone, subscribe, file });
+  // TODO: Send email or store in DB
+  res.json({ success: true });
 });

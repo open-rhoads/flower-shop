@@ -30,7 +30,9 @@ I have modularized the cart controls and Add to Cart function to add it to both 
 Last for the Cart is that I need to add the Checkout functionality.
 
 ## Working Contact Form
-The Contact form in this project originally did not actually submit and was front-end only. I am working on adding the backend submission and maybe storing them in the database. It needs some debugging currently. 
+The Contact form in this project originally did not actually submit and was front-end only. I added a contact post route to the server and more JavaScript to get the form data and send it to the bacl end with the FormData object and multer middleware for files. 
+
+Right now, it just displays a confirmation message and the server receives the data. Maybe in the future, I'll add a submissions table and store them in the database. 
 
 ## Adding a Working Search
-Another great enhancement for this project would be a functional search. I will add this once the database and cart checkout are set up.
+Another great enhancement for this project would be a functional search. I may add this once the database and cart checkout are set up.

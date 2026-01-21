@@ -29,9 +29,9 @@ app.listen(PORT, () => {
 // to start: node server.js
 // to stop: Ctrl + C
 
-// should this be moved...
-import multer from "multer";
-const upload = multer({ dest: "uploads/" }); // Files saved in /uploads
+// multer for getting form data...a middleware so Express can process file uploads (default is JSON & URL encoded data only)
+const multer = require("multer");
+const upload = multer({ dest: "/uploads" }); // Files saved in /uploads
 
 // Route to get all products
 app.get('/products', (req, res) => {

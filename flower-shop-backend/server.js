@@ -1,23 +1,25 @@
 // Import required modules
 const express = require('express');         // Express is the web framework
-const bodyParser = require('body-parser');  // Middleware to parse JSON request bodies
 const cors = require('cors');               // Middleware to allow cross-origin requests
 const sqlite3 = require('sqlite3').verbose(); // SQLite database driver
+const fs = require("fs");
+const { createDbConnection } = require("./db_conn.js"); // use helper file with db connection
+// multer for getting form data...a middleware so Express can process file uploads (default is JSON & URL encoded data only)
+const multer = require("multer");
+// Make sure ./uploads exists and use a safe absolute path
+const path = require("path");
+const uploadDir = path.join(__dirname, "uploads");
+fs.mkdirSync(uploadDir, { recursive: true });
+const upload = multer({ dest: uploadDir }); // Files saved in /uploads
 
 const app = express(); // Create an Express app
 const PORT = 3000;     // Define the port your server will run on
 
 // Middleware setup
-app.use(cors());               // Allow requests from other origins (like your frontend)
-app.use(bodyParser.json());    // Automatically parse JSON in incoming requests
-
+app.use(cors()); // Allow requests from other origins (like your frontend)
+app.use(express.json()); // use express.json to parse JSON request bodies
 // Connect to SQLite database (creates file if it doesn't exist)
-const db = new sqlite3.Database('./flower_shop.db', (err) => {
-  if (err) {
-    return console.error(err.message); // Log error if connection fails
-  }
-  console.log('Connected to the SQLite database.');
-});
+const db = createDbConnection(); // use helper function from file with db connection
 
 // Start the server and listen on the defined port
 app.listen(PORT, () => {
@@ -29,9 +31,7 @@ app.listen(PORT, () => {
 // to start: node server.js
 // to stop: Ctrl + C
 
-// multer for getting form data...a middleware so Express can process file uploads (default is JSON & URL encoded data only)
-const multer = require("multer");
-const upload = multer({ dest: "/uploads" }); // Files saved in /uploads
+
 
 // Route to get all products
 app.get('/products', (req, res) => {

@@ -12,11 +12,14 @@ Possibly the best enhancement I am working on with this one is to actually hook 
 
 First, I've used the command line to setup the environment dependencies in a directory. Then, I created the main server file to import required modules/ middleware, then start the app and middleware. This also creates the SQLite database file. Finally, it starts the server port.
 
-From there, I added more files to connect to the database and create, then populate starter tables. I learned how to troubleshoot the tables with the command line using sqlite3. 
-
-With the basic database in place, I set up some basic routes in another file to serve as API endpoints that will work with the database records. 
+From there, I added more files to connect to the database and create, then populate starter tables. With the basic database in place, I set up some basic routes in another file to serve as API endpoints that will work with the database records. 
 
 Finally, I modified both the products.js and product-detail.js files to pull the data from this backend instead of the hard coded JSON file I started with.
+
+### SQLite3 Console Troubleshooting
+ I learned how to troubleshoot the tables with the command line using sqlite3. Once configured, you can use the 'sqlite3' command in the terminal on the database file name to start running it and then you can run SQL commands on the database right from the terminal. 
+
+ Once running, you will see a prompt of sqlite> in the terminal. '.help' will provide hints. '.tables' will return table names. Run PRAGMA table_info(orders); inserting any table name in the () to see all column data.
 
 ## Adding the Cart Functionality
 Now that the products are being loaded from a database dynamically, I am working on implementing the cart, checkout, and confirmation pages and functionality. 
@@ -27,12 +30,14 @@ Next, I added a Cart icon button in the nav on every page with a badge that will
 
 I have modularized the cart controls and Add to Cart function to add it to both the Products and Product Detail pages. I cleaned up a lot of style issues with button alignment. I have also enhanced the cart to be able to work with a quantity value.
 
-Last for the Cart is that I need to add the Checkout functionality.
+Lastly, I added a mock checkout functionality to my eCommerce site. I modified my database table structure a bit to contain tables for orders and order items that are related with foreign keys. 
+
+LAST will be to add new HTML pages for the Checkout form and Confirmation; and more JavaScript to handle those events. I will not bother including real payments for this personal project.  
 
 ## Working Contact Form
-The Contact form in this project originally did not actually submit and was front-end only. I added a contact post route to the server and more JavaScript to get the form data and send it to the bacl end with the FormData object and multer middleware for files. 
+The Contact form in this project originally did not actually submit and was front-end only. I added a contact post route to the server and more JavaScript to get the form data and send it to the back end with the FormData object and multer middleware for files. 
 
 Right now, it just displays a confirmation message and the server receives the data. Maybe in the future, I'll add a submissions table and store them in the database. 
 
 ## Adding a Working Search
-Another great enhancement for this project would be a functional search. I may add this once the database and cart checkout are set up.
+Another great enhancement for this project would be a functional search. I may add this in the future.

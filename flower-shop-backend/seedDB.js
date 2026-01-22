@@ -2,7 +2,9 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // Open a connection to the SQLite database file
-const db = new sqlite3.Database('./flower_shop.db');
+const path = require("path");
+const { createDbConnection } = require("./db_conn.js");
+const db = createDbConnection();
 
 // Import the products array from your local products-data.js file
 const { products } = require('../scripts/products-data.js');

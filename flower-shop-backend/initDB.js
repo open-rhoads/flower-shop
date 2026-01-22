@@ -55,10 +55,10 @@ db.serialize(() => {
       FOREIGN KEY (product_id) REFERENCES products(id)
     )`
   );
-  // create indexes to support foreign keys
-  db.run(`CREATE INDEX IF NOT EXISTS idx_orders_created_at ON orders(created_at`);
-  db.run(`CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON order_items(order_id)`);
-  db.run(`CREATE INDEX IF NOT EXISTS idx_order_items_product_id ON order_items(product_id)`);
+  // create indexes to support foreign keys (helps find rows faster as data grows. speeds up lookups, joins & deletes with cascading effects)
+  db.run(`CREATE INDEX IF NOT EXISTS idx_orders_created_at ON orders(created_at`); // handy for sorting/filters on order history.
+  db.run(`CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON order_items(order_id)`); // deleting an order removes its items. makes the cascade delete efficient.
+  db.run(`CREATE INDEX IF NOT EXISTS idx_order_items_product_id ON order_items(product_id)`); // for joins and cleanups
 });
 
 // Close the database connection

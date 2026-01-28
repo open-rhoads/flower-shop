@@ -100,7 +100,7 @@
         } else {
           return fetch(`${API_BASE}/cart`).then(r => r.json()).then(render);
         }
-        // Keep the badge in sync across the site (your existing util)
+        // Keep the badge in sync across the site 
         updateCartCount();
       })
       .catch(err => {
@@ -112,7 +112,8 @@
   // Checkout button handler - Guard with a null check so the file can be loaded on other pages without errors.
   if (checkoutBtn){
     checkoutBtn.addEventListener('click', () => {
-      window.location.href = '../checkout.html';
+      const url = new URL('checkout.html', window.location.href);
+      window.location.href = url.href; // -> /flower-shop/checkout.html
     });
   }
 })();

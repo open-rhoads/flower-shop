@@ -108,3 +108,5 @@ app.post("/contact", upload.single("attachment"), (req, res) => {
   // TODO: Send email or store in DB
   res.json({ success: true });
 });
+
+// Route for checkout

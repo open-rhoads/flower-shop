@@ -3,19 +3,11 @@
  * preventing accidental name collisions across pages and scripts. 
  * Also ensures the script executes as soon as it's loaded, which matches current pattern.
  */
-(function (){
+(function () {
   /* Cache key DOM references once at the top to avoid repeated DOM queries - slightly more efficient and keeps code tidy. */
   const container = document.getElementById('cart-items');
   const totalEl = document.getElementById('cart-total');
   const checkoutBtn = document.getElementById('checkout-btn');
-  
-  /* CHANGE: Add a tiny currency helper.
-   * centralizing calls to toFixed, reduces duplication and
-   * avoids subtle inconsistencies (e.g., missing $ or different rounding).
-  */
-  function formatCurrency(n) {
-    return `$${Number(n || 0).toFixed(2)}`;
-  }
 
   /* rendering into a pure `render(cartItems)` function
    * Separates concerns (fetch vs. render), makes it trivial to re-render after

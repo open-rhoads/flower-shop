@@ -112,6 +112,7 @@
   // Checkout button handler - Guard with a null check so the file can be loaded on other pages without errors.
   if (checkoutBtn){
     checkoutBtn.addEventListener('click', () => {
+      // browser to resolve a relative URL ('checkout.html') against a base URL (your current page’s full URL), then giving you an absolute, normalized URL
       const url = new URL('checkout.html', window.location.href);
       window.location.href = url.href; // -> /flower-shop/checkout.html
     });

@@ -63,18 +63,131 @@
           </div>
         </nav>
     </header>
+    <main class="row my-4">
+      <h1>Checkout</h1>
+      <!-- Checkout form on the left -->
+      <div class="col-4">
+        <!-- need form action here... why is novalidate needed -->
+        <form action="" id="checkout-form" novalidate>
+          <!-- Contact Info -->
+          <div class="mb-3">
+            <label for="fullName" class="form-label" for="fullName">Full Name</label>
+            <input class="form-control" id="fullName" name="fullName" required />
+            <div class="invalid-feedback">Please enter your name.</div>
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" id="email" name="email" type="email" required />
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <!-- Shipping address -->
+          <h2 class="h6 mt-4">Shipping address</h2>
+          <div class="mb-3">
+            <label class="form-label" for="street">Street Address</label>
+            <input class="form-control" id="street" name="street" required />
+            <div class="invalid-feedback">Street is required.</div>
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label class="form-label" for="city">City</label>
+                <input class="form-control col-6" id="city" name="city" required />
+                <div class="invalid-feedback">City is required.</div>
+              </div>
+              <div class="col-3 mb-3">
+                <label class="form-label" for="state">State</label>
+                <input class="form-control col-3" id="state" name="state" maxlength="2" required />
+                <div class="invalid-feedback">State is required.</div>
+              </div>
+              <div class="col-3 mb-3">
+                <label class="form-label" for="zip">ZIP</label>
+                <input class="form-control" id="zip" name="zip" pattern="\\d{5}" required />
+                <div class="invalid-feedback">5-digit ZIP required.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Shipping method -->
+          <h2 class="h6 mt-4">Delivery</h2>
+          <div class="mb-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="ship-standard"
+                name="shipping"
+                value="standard"
+                checked
+              />
+              <label class="form-check-label" for="ship-standard">
+                Standard (3–5 days) — $5.00
+              </label>
+            </div> 
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="ship-express"
+                name="shipping"
+                value="express"
+              />
+              <label class="form-check-label" for="ship-express">
+                Express (1–2 days) — $15.00
+              </label>
+            </div>
+          </div>
+          <!-- Actions -->
+          <div class="mt-4 d-flex gap-2">
+            <a href="cart.html" class="btn btn-outline-secondary">Back to cart</a>
+            <button class="btn btn-dark" type="submit" id="place-order-btn">Place order</button>
+          </div>
+        </form>
+      </div>
+      <!-- order summary that checkout -->
+      <div class="col-8">
+        <div class="card"> 
+            <div class="card-body">
+              <h2 class="h6">Order summary</h2>
+              <!-- JS fills each line item here -->
+              <div id="summary-items" class="small mb-3"></div>             
+              <div class="d-flex justify-content-between">
+                <span>Subtotal</span>
+                <strong id="summary-subtotal">$0.00</strong>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Shipping</span>
+                <strong id="summary-shipping">$0.00</strong>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Tax</span>
+                <strong id="summary-tax">$0.00</strong>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between">
+                <span>Total</span>
+                <strong id="summary-total">$0.00</strong>
+              </div>
 
-    <h1>Checkout</h1>
-    <div id="cart-items" class="row d-flex justify-content-stretch">
-      
-    </div>
-    <!-- <div class="row"> -->
-      <h2 id="cart-total">Total: $0.00</h2>
-      <!-- <button class="btn" id="checkout-btn">Checkout</button> -->
-    <!-- </div> -->
+            </div>
+        </div>
+      </div>
+    </main>
+    <hr class="featurette-divider">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0">&copy; <span id="year"></span> Once & Floral</p>
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#top" class="nav-link px-2">Back to Top</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link px-2">Home</a></li>
+        <li class="nav-item"><a href="products.html" class="nav-link px-2">Products</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link px-2">Contact</a></li>
+      </ul>
+    </footer>
   </div>
   <script src="./scripts/config.js"></script>
-  <script src="./scripts/cart.js"></script>
-  <script src="./scripts/cart-utils.js"></script>
+  <script src="./scripts/checkout.js"></script>
+  <script>
+      // Small footer helper
+      document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <!-- <script src="./scripts/cart.js"></script>
+  <script src="./scripts/cart-utils.js"></script> -->
 </body>
 </html>

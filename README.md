@@ -30,9 +30,12 @@ Next, I added a Cart icon button in the nav on every page with a badge that will
 
 I have modularized the cart controls and Add to Cart function to add it to both the Products and Product Detail pages. I cleaned up a lot of style issues with button alignment. I have also enhanced the cart to be able to work with a quantity value.
 
+### Making the Checkout Work (without payments)
 Lastly, I added a mock checkout functionality to my eCommerce site. I modified my database table structure a bit to contain tables for orders and order items that are related with foreign keys. 
 
-LAST will be to add new HTML pages for the Checkout form and Confirmation; and more JavaScript to handle those events. I will not bother including real payments for this personal project.  
+I started adding new HTML pages for the Checkout form and Confirmation; and more JavaScript to handle them. I will not bother including real payments for this personal project.  
+
+In doing this, I needed to setup more routes to my database and use contextual sessions so that the cart would not be global. I still need to finish these and add more columns to some tables in the database. Then the confirmation page/logic should finish up the project and it hopefully will be ready for hosting.
 
 ## Working Contact Form
 The Contact form in this project originally did not actually submit and was front-end only. I added a contact post route to the server and more JavaScript to get the form data and send it to the back end with the FormData object and multer middleware for files. 

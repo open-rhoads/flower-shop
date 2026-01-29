@@ -4,10 +4,16 @@ const cors = require('cors');               // Middleware to allow cross-origin 
 const sqlite3 = require('sqlite3').verbose(); // SQLite database driver
 const fs = require("fs");
 const { createDbConnection } = require("./db_conn.js"); // use helper file with db connection
+// uuid will be used in checkout to generate complex, unique ids for each checkout
+const { v4: uuid } = require('uuid');
 // multer for getting form data...a middleware so Express can process file uploads (default is JSON & URL encoded data only)
 const multer = require("multer");
 // Make sure ./uploads exists and use a safe absolute path
 const path = require("path");
+
+// Add express-session so we can scope carts per visitor (no login required)
+const session = require('express-session');
+
 const uploadDir = path.join(__dirname, "uploads");
 fs.mkdirSync(uploadDir, { recursive: true });
 const upload = multer({ dest: uploadDir }); // Files saved in /uploads
@@ -16,8 +22,12 @@ const app = express(); // Create an Express app
 const PORT = 3000;     // Define the port your server will run on
 
 // Middleware setup
-app.use(cors()); // Allow requests from other origins (like your frontend)
+// Allow requests from other origins (like your frontend)
+// Allows front-end dev server (e.g., Live Server at 5500) to call the API on 3000
+app.use(cors({origin: true, credentials: true })); 
 app.use(express.json()); // use express.json to parse JSON request bodies
+// enable sessions TO-DO
+
 // Connect to SQLite database (creates file if it doesn't exist)
 const db = createDbConnection(); // use helper function from file with db connection
 

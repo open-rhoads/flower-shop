@@ -40,7 +40,7 @@
   }
 
   // Fetch to load cart & render summary
-  fetch(`${API_BASE}/cart`)
+  fetch(`${API_BASE}/cart`, { credentials: "include" })
     .then(r => r.json()) // set cart equal to the JSON form response, if an array, or make empty array
     .then(items => { 
       cart = Array.isArray(items) ? items : []; 
@@ -84,6 +84,7 @@
     fetch(`${API_BASE}/checkout`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: "include",
       body: JSON.stringify(data),
     })
       .then(r => r.json()) // turn the response to JSON

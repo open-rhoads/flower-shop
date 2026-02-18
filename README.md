@@ -35,7 +35,13 @@ Lastly, I added a mock checkout functionality to my eCommerce site. I modified m
 
 I started adding new HTML pages for the Checkout form and Confirmation; and more JavaScript to handle them. I will not bother including real payments for this personal project.  
 
-In doing this, I needed to setup more routes to my database and use contextual sessions so that the cart would not be global. I still need to finish these and add more columns to some tables in the database. Then the confirmation page/logic should finish up the project and it hopefully will be ready for hosting.
+In doing this, I needed to setup more routes to my database and use contextual sessions so that the cart would not be global. I added columns for session ids and split the address fields into separate columns (in the event this project ever gets more advanced in the future, those could be useful). 
+
+In the server, I added a helper function to get the session ID for a cart and modified the POST/GET/DELETE routes for the cart to use them. I also added another helper function to compute total values in cents and return subtotal/tax/shipping/total. 
+
+Then, I added a POST route for /checkout and a GET route for orders/:id ...
+
+Last - the confirmation page/logic should finish up the project and it hopefully will be ready for hosting.
 
 ## Working Contact Form
 The Contact form in this project originally did not actually submit and was front-end only. I added a contact post route to the server and more JavaScript to get the form data and send it to the back end with the FormData object and multer middleware for files. 

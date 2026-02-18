@@ -58,7 +58,7 @@
   }
 
   // Fetch cart items from backend and display or handle errors/empty cart
-  fetch(`${API_BASE}/cart`)
+  fetch(`${API_BASE}/cart`, { credentials: "include" })
     .then(response => response.json())
     .then(cartItems => {
       render(cartItems);
@@ -83,14 +83,17 @@
     const itemId = btn.getAttribute('data-id');
     if (!itemId) return;
 
-    fetch(`${API_BASE}/cart/${encodeURIComponent(itemId)}`, { method: 'DELETE' })
+    fetch(`${API_BASE}/cart/${encodeURIComponent(itemId)}`, { 
+      method: 'DELETE',
+      credentials: "include"
+    })
       .then(r => r.json())
       .then(next => {
         // Prefer server's authoritative cart if provided
         if (Array.isArray(next)) {
           render(next);
         } else {
-          return fetch(`${API_BASE}/cart`).then(r => r.json()).then(render);
+          return fetch(`${API_BASE}/cart`, {credentials: "include"}).then(r => r.json()).then(render);
         }
         // Keep the badge in sync across the site 
         updateCartCount();

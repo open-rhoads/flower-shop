@@ -27,6 +27,7 @@ function addToCart(productId, quantity = 1) {
   fetch(`${API_BASE}/cart`, { 
     method: "POST",
     headers: { "Content-Type": "application/json" },
+    credentials: "include",
     body: JSON.stringify({ product_id: productId, quantity })
   })
   .then(res => res.json())
@@ -41,7 +42,7 @@ function addToCart(productId, quantity = 1) {
 }
 
 function updateCartCount() {
-  fetch(`${API_BASE}/cart`) 
+  fetch(`${API_BASE}/cart`, {credentials: "include"}) 
     .then(response => response.json())
     .then(cartItems => {
         // Calculate total quantity - reduce expects callback and initial value

@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:3000"; // Change to your hosted URL later
+const API_BASE = "http://127.0.0.1:3000"; // Change to your hosted URL later
 
 /* Add a tiny currency helper.
    * centralizing calls to toFixed, reduces duplication and

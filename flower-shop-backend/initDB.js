@@ -26,6 +26,7 @@ db.serialize(() => {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       product_id INTEGER,
       quantity INTEGER,
+      session_id TEXT, -- makes each cart unique to user
       FOREIGN KEY(product_id) REFERENCES products(id)
     )`
   );
@@ -36,12 +37,16 @@ db.serialize(() => {
       name TEXT NOT NULL,
       email TEXT NOT NULL,
       phone TEXT,
-      address TEXT,
+      street TEXT,
+      city TEXT,
+      state TEXT,
+      zip TEXT,
       subtotal_cents INTEGER NOT NULL DEFAULT 0,
       tax_cents INTEGER NOT NULL DEFAULT 0,
       shipping_cents INTEGER NOT NULL DEFAULT 0,
       total_cents INTEGER NOT NULL DEFAULT 0,
-      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      shipping_method TEXT DEFAULT 'standard'
     )`
   );
   // Create order_items table (the parts of the receipt)
@@ -56,9 +61,11 @@ db.serialize(() => {
     )`
   );
   // create indexes to support foreign keys (helps find rows faster as data grows. speeds up lookups, joins & deletes with cascading effects)
-  db.run(`CREATE INDEX IF NOT EXISTS idx_orders_created_at ON orders(created_at`); // handy for sorting/filters on order history.
+  db.run(`CREATE INDEX IF NOT EXISTS idx_orders_created_at ON orders(created_at)`); // handy for sorting/filters on order history.
   db.run(`CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON order_items(order_id)`); // deleting an order removes its items. makes the cascade delete efficient.
   db.run(`CREATE INDEX IF NOT EXISTS idx_order_items_product_id ON order_items(product_id)`); // for joins and cleanups
+  // create an index on the session id for fast cart lookup... 
+  db.run(`CREATE INDEX IF NOT EXISTS idx_cart_session_id ON cart(session_id)`);
 });
 
 // Close the database connection
